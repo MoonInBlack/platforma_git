@@ -1,0 +1,9 @@
+<nav class="{{ menu_class }} main-menu top-menu">
+<ul>
+    {% for item in categoryes %}
+	<li>
+        <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+	</nav>

@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ title }} : : {{ block.super }} {% endblock %}
+
+
+
+{% block first-section %}
+
+    <section class="first-section clearfix">
+	<div class="container-fluid">
+
+		<div class="ad top-ad">
+
+		</div>
+
+		<div class="row no-gutters">
+
+{% for post in posts %}
+			{% if forloop.counter < 3 %}
+			<div class="col-md-6">
+	<div class="pattern">
+
+		{% if post.photo %}
+		<div class="overlay item-title" style="background-image: url({{ post.photo.url }})">
+			{% endif %}
+
+			<div class="item-title-content">
+
+				<h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+
+				<div class="item-social">
+					<div class="item-comments" title="Количество комментариев">
+						<i class="fa fa-comments"></i><a href="/blog/events/2021-07-28-dostojnaya-pamyat.html#disqus_thread" class="item-comments-count"></a>
+					</div>
+					<div class="fa fa-share-alt" title="Поделиться в соц. сетях"></div>
+					<div class="likely likely-custom" data-url="http://platforma44.ru/blog/events/2021-07-28-dostojnaya-pamyat.html" data-media="http://platforma44.ru/images/events/2021/2021-07-28-dostojnaya-pamyat/1.jpg" data-title="Достойная Память">
+						<div class="vkontakte" title="Поделиться Вконтакте">Вконтакте</div>
+						<div class="facebook" title="Поделиться в Facebook">Facebook</div>
+						<div class="twitter" title="Поделиться в Twitter">Twitter</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+			
+            {% else %}
+			<div class="col-md-4">
+	<div class="pattern">
+
+		{% if post.photo %}
+		<div class="overlay item-title" style="background-image: url({{ post.photo.url }})">
+
+			{% endif %}
+			<div class="item-title-content">
+
+				<h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+
+				<div class="item-social">
+					<div class="item-comments" title="Количество комментариев">
+						<i class="fa fa-comments"></i><a href="/blog/events/2021-07-02-beskonechnye-prostory.html#disqus_thread" class="item-comments-count"></a>
+					</div>
+					<div class="fa fa-share-alt" title="Поделиться в соц. сетях"></div>
+					<div class="likely likely-custom" data-url="http://platforma44.ru/blog/events/2021-07-02-beskonechnye-prostory.html" data-media="http://platforma44.ru/images/events/2021/2021-07-02-beskonechnye-prostory/1.jpg" data-title="Бесконечные просторы малой родины - Ивановская область гостевой дом Решемка">
+						<div class="vkontakte" title="Поделиться Вконтакте">Вконтакте</div>
+						<div class="facebook" title="Поделиться в Facebook">Facebook</div>
+						<div class="twitter" title="Поделиться в Twitter">Twitter</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+			{% endif %}
+{% endfor %}
+
+
+		</div>
+
+	</div>
+</section>
+
+{% endblock %}
+
+{% block second-section %}
+
+    <section class="second-section">
+
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="col-md-8">
+
+				<h2><a href="blog/it-dou/">Образование</a></h2>
+
+				<div class="row news-wrap">
+
+{% for post in posts %}
+					{% if forloop.counter > 1 %}
+<div class="col-md-6">
+	<div class="pattern">
+		{% if post.photo %}
+		<a href="{{ post.get_absolute_url }}" class="overlay item-news" style="background-image: url({{ post.photo.url }})"></a>
+			{% endif %}
+			<div class="item-news-content">
+				<h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+				<span class="date"><a href="{{ post.get_absolute_url }}">{{ post.created_at }}</a></span>
+			</div>
+		</a>
+	</div>
+</div>
+					{% endif %}
+					{% endfor %}
+
+				</div>
+
+			</div>
+
+			<div class="col-md-4 home-aside">
+
+				<div class="aside-box">
+
+				</div>
+
+				<div class="aside-box">
+<div id="vk_groups"></div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</section>
+
+{% endblock %}
+
+{% block third-section %}
+
+    <section class="third-section dark-section">
+
+	<div class="container-fluid">
+
+		<h2><a href="blog/reviews/">Обзоры</a></h2>
+
+		<div class="row">
+
+{% for post in posts %}
+			{% if forloop.counter > 1 %}
+			<div class="col-md-3">
+	<div class="col-item col-item-dark">
+		<a href="/blog/reviews/2021-05-30-volshebstvo-nacionalnogo-ornamenta.html">
+			<img src="{% static 'images/reviews/2021/2021-05-30-volshebstvo-nacionalnogo-ornamenta/1t.jpg' %}" alt="ОНЛАЙН - ВИКТОРИНА "Волшебство национального орнамента"" class="img-responsive img-width overlay" title="ОНЛАЙН - ВИКТОРИНА "Волшебство национального орнамента"">
+		</a>
+		<div class="col-item-meta">
+			<div class="item-comments" title="Количество комментариев">
+				<span class="date">30/05/2021</span>
+				<i class="fa fa-comments"></i><a href="/blog/reviews/2021-05-30-volshebstvo-nacionalnogo-ornamenta.html#disqus_thread" class="item-comments-count"></a>
+			</div>
+		</div>
+		<h4><a href="/blog/reviews/2021-05-30-volshebstvo-nacionalnogo-ornamenta.html">ОНЛАЙН - ВИКТОРИНА "Волшебство национального орнамента"</a></h4>
+	</div>
+</div>
+			{% endif %}
+			{% endfor %}
+
+		</div>
+
+	</div>
+
+</section>
+
+{% endblock %}
+
+{% block fourth-section %}
+
+    <section class="fourth-section">
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="col-sm-12">
+				<h2 class="fourth-section-header"><a href="blog/projects/">Проекты</a></h2>
+			</div>
+
+			<div class="col-md-8 col-sm-6">
+
+				<div class="row no-gutters">
+
+{% for post in posts %}
+					{% if forloop.counter > 1 %}
+					<div class="col-md-6">
+	<div class="pattern">
+		<div class="overlay item-title" style="background-image: url({% static 'images/projects/2021/2021-07-16-pravoobouchalka-dlya-malyshej/1t.jpg' %})">
+			<div class="item-title-content">
+				<h3><a href="/blog/projects/2021-07-16-pravoobouchalka-dlya-malyshej.html">В стране обучающих мультфильмов</a></h3>
+				<div class="item-social">
+					<div class="item-comments" title="Количество комментариев">
+						<i class="fa fa-comment"></i><a class="item-comments-count" href="/blog/projects/2021-07-16-pravoobouchalka-dlya-malyshej.html#disqus_thread"></a>
+						<span class="date">16/07/2021</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+					{% endif %}
+					{% endfor %}
+
+				</div>
+
+			</div>
+
+			<div class="col-md-4 col-sm-6">
+
+				<div class="aside-box">
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+{% block type-one %}
+
+    <section class="type-one">
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="col-sm-12">
+				<h2 class="type-one-header"><a href="blog/prethent/">Презентации</a></h2>
+			</div>
+
+{% for post in posts %}
+			{% if forloop.counter > 4 %}
+			<div class="col-md-7">
+	<div class="type-one-first">
+		<a href="/blog/prethent/2021-05-23-armyanskij-nacionalnyj-kostyum.html" title="Армянский национальный костюм">
+			<img src="{% static 'images/prethent/2021/2021-05-23-armyanskij-nacionalnyj-kostyum/1.jpg' %}" alt="Армянский национальный костюм" class="img-responsive img-width">
+		</a>
+		<div class="item-social">
+			<div class="item-comments" title="Количество комментариев">
+				<i class="fa fa-comment"></i><a class="item-comments-count" href="/blog/prethent/2021-05-23-armyanskij-nacionalnyj-kostyum.html#disqus_thread"></a>
+				<span class="date">23/05/2021</span>
+			</div>
+		</div>
+		<h3><a href="/blog/prethent/2021-05-23-armyanskij-nacionalnyj-kostyum.html">Армянский национальный костюм</a></h3>
+	</div>
+</div>
+			{% endif %}
+			{% endfor %}
+
+
+			<div class="col-md-5 item-title-white">
+
+{% for post in posts %}
+				{% if forloop.counter > 3 %}
+				<div class="pattern">
+	<div class="overlay item-title" style="background-image: url({% static 'images/prethent/2021/2021-03-11-volshebnoe-iskusstvo-v-russkom-stile/1t.jpg' %})">
+		<div class="item-title-content">
+			<h3><a href="/blog/prethent/2021-03-11-volshebnoe-iskusstvo-v-russkom-stile.html">Мастер-класс Волшебное искусство в русском стиле — роспись гжель. Куколка большеножка.</a></h3>
+			<div class="item-social">
+				<div class="item-comments" title="Количество комментариев">
+					<i class="fa fa-comment"></i><a class="item-comments-count" href="/blog/prethent/2021-03-11-volshebnoe-iskusstvo-v-russkom-stile.html#disqus_thread"></a>
+					<span class="date">11/03/2021</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+				{% endif %}
+				{% endfor %}
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+{% block s_more %}
+
+    <section class="s_more text-center">
+	<div class="container">
+		<a href="blog/" class="button">Показать еще</a>
+	</div>
+</section>
+
+{% endblock %}
+
